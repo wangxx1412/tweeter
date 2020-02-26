@@ -1,0 +1,231 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+/*
+ * Global layout stuff
+ */
+body {
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #545149;
+  background-color: #f4f1ec;
+  font-family: "Source Sans Pro"; }
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+main {
+  position: relative;
+  width: 90%;
+  background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.top {
+  display: none;
+  position: fixed;
+  background-color: #f05f1b;
+  padding: 20px;
+  border-radius: 50px;
+  right: 25px;
+  bottom: 8px; }
+
+.top:hover {
+  background-color: red; }
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: inline; }
+  main {
+    width: 60%;
+    float: right;
+    padding: 0 2em 0 3em; } }
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("../images/billie-holiday.png");
+  background-color: darkorange; }
+  .hero .hero-avatar {
+    margin-top: 30px; }
+  .hero .name {
+    color: white; }
+    .hero .name h2 {
+      margin-top: 0; }
+
+@media only screen and (min-width: 1024px) {
+  .hero {
+    max-width: 40%;
+    float: left;
+    padding: 0 3em 0 2em;
+    background-clip: content-box; }
+  .hero-avatar {
+    margin: 30px 10px 0 10px; } }
+
+article.tweet {
+  margin-top: 60px;
+  margin-bottom: 40px;
+  padding: 0 10px;
+  border: 5px solid #545149;
+  position: relative; }
+  article.tweet:hover {
+    box-shadow: 10px 10px #c5cbe3; }
+    article.tweet:hover header > .handler {
+      visibility: visible; }
+  article.tweet header {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 20px 50px 10px;
+    justify-content: space-between; }
+    article.tweet header div.user {
+      font-weight: 300;
+      display: flex;
+      align-items: center; }
+      article.tweet header div.user .username {
+        margin-left: 17px; }
+    article.tweet header div.handler {
+      visibility: hidden;
+      color: #c5cbe3; }
+  article.tweet .content {
+    border-bottom: 5px solid #545149;
+    padding: 0 20px 40px 20px; }
+  article.tweet footer {
+    display: flex;
+    padding: 10px 20px 20px 20px;
+    flex-direction: row;
+    justify-content: space-between; }
+    article.tweet footer .created {
+      padding-top: 5px;
+      font-size: 0.6em; }
+    article.tweet footer .icons {
+      display: flex;
+      padding-top: 5px; }
+      article.tweet footer .icons .icon {
+        margin-left: 10px;
+        font-size: 0.6em; }
+
+.new-tweet {
+  width: 100%;
+  margin-top: 55px; }
+  .new-tweet .tweet-label {
+    display: none; }
+  .new-tweet textarea {
+    width: 100%;
+    padding-bottom: 15px;
+    background-color: inherit;
+    border: none;
+    border-bottom: 5px solid #545149;
+    outline: none;
+    resize: none; }
+  .new-tweet ::placeholder {
+    color: #545149;
+    font-size: 1em;
+    font-weight: 700;
+    text-align: bottom; }
+  .new-tweet .bottom-bar {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between; }
+    .new-tweet .bottom-bar .tweet-btn {
+      background-color: #4056a1;
+      color: #ffffff;
+      font-family: "Bungee";
+      font-size: 0.9em; }
+    .new-tweet .bottom-bar .counter {
+      font-family: "Bungee"; }
+
+.invalid-counter {
+  color: red; }
+
+.hide {
+  display: none; }
+
+.no-content {
+  padding: 10px 20px;
+  color: red;
+  display: none;
+  border: 3px solid red;
+  margin-bottom: 50px;
+  font-weight: 300; }
+
+.long-tweet {
+  padding: 10px 20px;
+  color: red;
+  display: none;
+  border: 3px solid red;
+  margin-bottom: 50px;
+  font-weight: 300; }
+
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    margin-top: 0; } }
+
+nav {
+  width: 100vw;
+  height: 90px;
+  padding: 1.5em;
+  z-index: 2;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  background-color: #4056a1;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between; }
+  nav .logo {
+    font-family: "Bungee"; }
+  nav .right-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    nav .right-nav div {
+      font-size: 0.7em; }
+    nav .right-nav .pointer {
+      margin-top: 4px;
+      display: flex;
+      justify-content: center; }
+
+@keyframes move {
+  0% {
+    left: 0px;
+    top: 0px; }
+  50% {
+    left: 0px;
+    top: 10px; }
+  100% {
+    left: 0px;
+    top: 0px; } }
+
+.pointer-img {
+  opacity: 0.7;
+  position: relative;
+  animation-name: move;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate; }
+
+.pointer-img:hover {
+  opacity: 1; }
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    margin-bottom: 120px; } }

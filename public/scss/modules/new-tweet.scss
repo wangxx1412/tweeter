@@ -1,0 +1,70 @@
+.new-tweet {
+  width: 100%;
+  margin-top: 55px;
+
+  .tweet-label {
+    display: none;
+  }
+
+  textarea {
+    width: 100%;
+    padding-bottom: 15px;
+    background-color: inherit;
+    border: none;
+    border-bottom: 5px solid $primary_black;
+    outline: none;
+    resize: none;
+  }
+
+  ::placeholder {
+    color: $primary_black;
+    font-size: 1em;
+    font-weight: 700;
+    text-align: bottom;
+  }
+
+  .bottom-bar {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    .tweet-btn {
+      background-color: $primary_blue;
+      color: #ffffff;
+      font-family: "Bungee";
+      font-size: 0.9em;
+    }
+    .counter {
+      font-family: "Bungee";
+    }
+  }
+}
+
+.invalid-counter {
+  color: red;
+}
+
+.hide {
+  display: none;
+}
+.no-content {
+  padding: 10px 20px;
+  color: red;
+  display: none;
+  border: 3px solid red;
+  margin-bottom: 50px;
+  font-weight: 300;
+}
+.long-tweet {
+  padding: 10px 20px;
+  color: red;
+  display: none;
+  border: 3px solid red;
+  margin-bottom: 50px;
+  font-weight: 300;
+}
+
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    margin-top: 0;
+  }
+}
