@@ -51,7 +51,17 @@ const createTweetElement = tweet => {
         class: "created",
         text: `${convertTime(tweet.created_at)}`
       }),
-      $("<div/>", { class: "icons" })
+      $("<div/>", { class: "icons" }).append(
+        $("<div/>", { class: "icon" }).append(
+          $("<i/>", { class: "fas fa-flag" })
+        ),
+        $("<div/>", { class: "icon" }).append(
+          $("<i/>", { class: "fas fa-retweet" })
+        ),
+        $("<div/>", { class: "icon" }).append(
+          $("<i/>", { class: "fas fa-heart" })
+        )
+      )
     )
   );
   return $tweet;
@@ -81,17 +91,24 @@ $(document).ready(function() {
   loadTweets();
 
   $("form").submit(function(event) {
+    event.preventDefault();
     const length = $("textarea").val().length;
+
+    $(".no-content").slideUp("fast");
+    $(".long-tweet").slideUp("fast");
     if (length === 0) {
-      alert("No content provided");
+      $(".no-content").css("display", "block");
+      $(".no-content").slideDown("fast");
     } else if (length > 140) {
-      alert("Too long tweet");
+      $(".long-tweet").css("display", "block");
+      $(".long-tweet").slideDown("fast");
     } else {
       $.ajax({
         url: "/tweets",
         method: "POST",
         data: $(this).serialize()
       }).then(function(response) {
+        $("textarea").val("");
         $("#tweet-container").load("index.html #tweet-container");
         loadTweets();
       });

@@ -37,3 +37,27 @@ main {
   flex-direction: column;
   justify-content: center;
 }
+
+.top {
+  display: none;
+  position: fixed;
+  background-color: rgb(240, 95, 27);
+  padding: 20px;
+  border-radius: 50px;
+  right: 25px;
+  bottom: 8px;
+}
+.top:hover {
+  background-color: red;
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: inline;
+  }
+  main {
+    width: 60%;
+    float: right;
+    padding: 0 2em 0 3em;
+  }
+}

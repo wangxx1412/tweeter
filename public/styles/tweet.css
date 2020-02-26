@@ -50,3 +50,12 @@ article.tweet > footer > .created {
   padding-top: 5px;
   font-size: 0.6em;
 }
+
+article.tweet > footer > .icons {
+  display: flex;
+  padding-top: 5px;
+}
+.icon {
+  margin-left: 10px;
+  font-size: 0.6em;
+}

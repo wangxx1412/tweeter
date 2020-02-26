@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
@@ -31,6 +35,7 @@
       type="text/javascript"
       src="/scripts/composer-char-counter.js"
     ></script>
+    <script type="text/javascript" src="/scripts/composer.js"></script>
   </head>
 
   <body>
@@ -50,18 +55,20 @@
       </div>
     </nav>
     <header class="hero">
-      <div class="avatar">
+      <div class="hero-avatar">
         <img src="/images/profile-hex.png" />
       </div>
       <br />
       <div class="name">
-        <h2>Your Name</h2>
+        <h2>Your name</h2>
       </div>
     </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <div class="no-content">Tweet content should be provided.</div>
+        <div class="long-tweet">Too long tweet, exceed 140 characters.</div>
         <h2 class="tweet-label">Compose Tweet</h2>
         <form method="POST" action="/tweets" class="tweet-form">
           <textarea
@@ -78,5 +85,12 @@
       </section>
       <div id="tweet-container"></div>
     </main>
+    <div class="top">
+      <img src="./images/up.png" width="30px" height="25px" />
+    </div>
   </body>
+  <script
+    src="https://kit.fontawesome.com/dcfea36b3c.js"
+    crossorigin="anonymous"
+  ></script>
 </html>

@@ -46,3 +46,25 @@ textarea {
 .hide {
   display: none;
 }
+.no-content {
+  padding: 10px 20px;
+  color: red;
+  display: none;
+  border: 3px solid red;
+  margin-bottom: 50px;
+  font-weight: 300;
+}
+.long-tweet {
+  padding: 10px 20px;
+  color: red;
+  display: none;
+  border: 3px solid red;
+  margin-bottom: 50px;
+  font-weight: 300;
+}
+
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    margin-top: 0;
+  }
+}

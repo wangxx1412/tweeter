@@ -60,3 +60,9 @@ nav > .right-nav > div {
 .pointer-img:hover {
   opacity: 1;
 }
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    margin-bottom: 120px;
+  }
+}
