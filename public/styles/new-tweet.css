@@ -1,0 +1,48 @@
+.new-tweet {
+  width: 100%;
+  margin-top: 55px;
+}
+
+.tweet-label {
+  display: none;
+}
+
+textarea {
+  width: 100%;
+  padding-bottom: 15px;
+  background-color: inherit;
+  border: none;
+  border-bottom: 5px solid #545149;
+  outline: none;
+  resize: none;
+}
+
+::placeholder {
+  color: #545149;
+  font-size: 1em;
+  font-weight: 700;
+  text-align: bottom;
+}
+
+.bottom-bar {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet-btn {
+  background-color: #4056a1;
+  color: #ffffff;
+  font-family: "Bungee";
+  font-size: 0.9em;
+}
+.counter {
+  font-family: "Bungee";
+}
+.invalid-counter {
+  color: red;
+}
+
+.hide {
+  display: none;
+}

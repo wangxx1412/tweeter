@@ -5,25 +5,78 @@
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,400,700,700i&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script
+      type="text/javascript"
+      src="/scripts/composer-char-counter.js"
+    ></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <span class="logo">tweeter</span>
+      <div class="right-nav">
+        <div><b>Write</b> a new tweet</div>
+        <div class="pointer">
+          <img
+            src="http://clipart-library.com/images_k/animated-arrow-gif-transparent-background/animated-arrow-gif-transparent-background-1.png"
+            width="18"
+            height="18"
+            class="pointer-img"
+          />
+        </div>
+      </div>
     </nav>
+    <header class="hero">
+      <div class="avatar">
+        <img src="/images/profile-hex.png" />
+      </div>
+      <br />
+      <div class="name">
+        <h2>Your Name</h2>
+      </div>
+    </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <section class="new-tweet">
+        <h2 class="tweet-label">Compose Tweet</h2>
+        <form method="POST" action="/tweets" class="tweet-form">
+          <textarea
+            name="text"
+            rows="1"
+            placeholder="What are you humming about?"
+            id="textarea"
+          ></textarea>
+          <div class="bottom-bar">
+            <input type="submit" value="Tweet" class="tweet-btn" />
+            <span class="counter">140</span>
+          </div>
+        </form>
+      </section>
+      <div id="tweet-container"></div>
+    </main>
   </body>
 </html>
