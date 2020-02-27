@@ -67,27 +67,27 @@ const createTweetElement = tweet => {
   return $tweet;
 };
 
+const renderTweets = function(tweets) {
+  const sortedTweets = tweets.sort(function(a, b) {
+    return b["created_at"] - a["created_at"];
+  });
+
+  for (const tweet of sortedTweets) {
+    $("#tweet-container").append(createTweetElement(tweet));
+  }
+};
+
+const loadTweets = () => {
+  $.ajax({
+    url: "/tweets",
+    method: "GET",
+    data: $(this).serialize()
+  }).then(function(response) {
+    renderTweets(response);
+  });
+};
+
 $(document).ready(function() {
-  const renderTweets = function(tweets) {
-    const sortedTweets = tweets.sort(function(a, b) {
-      return b["created_at"] - a["created_at"];
-    });
-
-    for (const tweet of sortedTweets) {
-      $("#tweet-container").append(createTweetElement(tweet));
-    }
-  };
-
-  const loadTweets = () => {
-    $.ajax({
-      url: "/tweets",
-      method: "GET",
-      data: $(this).serialize()
-    }).then(function(response) {
-      renderTweets(response);
-    });
-  };
-
   loadTweets();
 
   $("form").submit(function(event) {
