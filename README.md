@@ -6,8 +6,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
-!["Screenshot of Urls Page"](https://github.com/wangxx1412/tinyapp/blob/master/docs/tweeter.png?raw=true)
-!["Screenshot of Register Page"](https://github.com/wangxx1412/tinyapp/blob/master/docs/tweeter-tablet.png?raw=true)
+!["Screenshot of Tweeter Page"](https://github.com/wangxx1412/tweeter/blob/master/docs/tweeter.png?raw=true)
+!["Screenshot of Tweeter-tablet Page"](https://github.com/wangxx1412/tweeter/blob/master/docs/tweeter-tablet.png?raw=true)
 
 ## Getting Started
 
